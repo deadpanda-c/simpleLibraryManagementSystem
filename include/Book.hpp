@@ -23,11 +23,12 @@ class Book
     Book(const std::string &title, const std::string &author, const std::string &isbn, bool isBorrowed, const std::string &borrower);
     ~Book();
 
-    const std::string &getTitle() const;
-    const std::string &getAuthor() const;
-    const std::string &getISBN() const;
-    bool isBorrowed() const;
+    std::string getTitle() const;
+    std::string getAuthor() const;
+    std::string getISBN() const;
     const std::string &getBorrower() const;
+
+    bool isBorrowed() const;
 
     void setBorrowed(bool isBorrowed, const std::string &borrower = "");
     void setTitle(const std::string &title);
