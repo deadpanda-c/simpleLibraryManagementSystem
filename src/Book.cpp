@@ -14,17 +14,17 @@ Book::~Book()
   Logging::Log("Book destroyed: " + _title);
 }
 
-const std::string &Book::getTitle() const
+std::string Book::getTitle() const
 {
   return _title;
 }
 
-const std::string &Book::getAuthor() const
+std::string Book::getAuthor() const
 {
   return _author;
 }
 
-const std::string &Book::getISBN() const
+std::string Book::getISBN() const
 {
   return _isbn;
 }
