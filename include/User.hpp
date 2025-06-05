@@ -1,10 +1,13 @@
 #pragma once
+
 #include <iostream>
 #include <string>
 #include <vector>
 #include <uuid/uuid.h>
 #include <exception>
 #include <cstring>
+#include <stdint.h>
+#include <array>
 
 #include "Logging.hpp"
 
@@ -20,12 +23,16 @@ class User {
         std::string msg;
     };
 
-    User(const std::string &name, uuid_t uuid, std::vector<std::string> borrowedBooksISBNs);
+    User(const std::string &name);
     ~User();
 
     void display() const;
     void borrowBook(const std::string &bookISBN);
-    std::string getUuid() const;
+
+    std::string getStringUuid() const;
+    std::array<uint8_t, 16> getUuid() const;
+    std::string getName() const;
+
   private:
     std::string _name;
     uuid_t _uuid;
