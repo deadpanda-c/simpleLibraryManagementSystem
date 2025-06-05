@@ -1,16 +1,17 @@
 #include <iostream>
-#include "Book.hpp"
+#include "User.hpp"
 
 int main(void)
 {
   try {
-    Book book("livre1", "Author1", "978-1234", false, "");
-    Book book2("livre2", "Author2", "978-1234", false, "");
-    Book book3("livre3", "Author3", "978-1234", false, "");
+    uuid_t userId;
+    std::vector<std::string> books = {"1984", "Brave New World", "Fahrenheit 451"};
 
-    book.display();
-    book2.display();
-    book3.display();
+    uuid_generate(userId);
+
+    User user1("Toto", userId, books);
+
+    user1.display();
   } catch (const std::exception& e) {
     Logging::LogError("An error occurred: " + std::string(e.what()));
   }
