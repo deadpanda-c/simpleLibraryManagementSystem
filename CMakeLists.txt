@@ -10,4 +10,4 @@ include_directories(
 add_subdirectory(lib/logging)
 
 add_executable(library_management ${SOURCES})
-target_link_libraries(library_management logging)
+target_link_libraries(library_management logging uuid)
